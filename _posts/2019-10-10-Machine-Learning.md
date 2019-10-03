@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An Overview of Machine Learning
+title: Coming up soon
 ---
 
 Coming up soon...
