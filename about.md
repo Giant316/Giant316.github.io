@@ -8,4 +8,4 @@ Currently a master student of Management & Data Science in Leuphana University. 
 
 ### Contact me
 
-[Jia.Y,Ng@stud.leuphana.de](mailto:email@domain.com)
+[Jia.Y.Ng@stud.leuphana.de](mailto:email@domain.com)
