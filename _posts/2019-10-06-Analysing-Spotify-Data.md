@@ -15,8 +15,8 @@ library(dplyr) # To use piping
 
 ``` r
 library(stringr) # string manipulation
-id <- "8d280370d04c4cda9c0a463cfa8636e3"
-secret <- "b91b6996ad194150b415313ab7b8db80"
+id <- "your ClientID"
+secret <- "your ClientSecret"
 Sys.setenv(SPOTIFY_CLIENT_ID = id)
 Sys.setenv(SPOTIFY_CLIENT_SECRET = secret)
 access_token <- get_spotify_access_token()
@@ -29,10 +29,7 @@ In this analysis, I am comparing the Top50 tracks from all countries so I am ret
 
 ``` r
 # only select the Top50 charts playlist, rename playlist name as respective country
-playlist <- get_user_playlists('gorpublicusage') %>% filter(grepl("^Top 50.*", name)) %>% select(id, country = name) 
-```
-
-``` r
+playlist <- get_user_playlists('yourUserID') %>% filter(grepl("^Top 50.*", name)) %>% select(id, country = name) 
 playlist$country <- lapply(playlist$country, str_remove, "Top 50 ") 
 
 topTrack <-data.frame()
@@ -69,12 +66,10 @@ Since data accessed is in German, so I have to map the respective countries name
 
 ``` r
 library(plyr)
-```
-
-``` r
 library(magrittr) # to us %<>% piping
 topTrack$Country <- as.character(mapvalues(topTrack$Country,from = c('Australien', 'Österreich', 
-'Belgien', 'Bolivien', 'Kanada', 'Bulgarien', 'Brasilien', 'Dänemark', 'Tschechische', 'Estland', 'Deutschland', 'Frankreich', 'Finnland', 'Griechenland', 'Ungarn', 'Island', 'Irland', 'Israel', 
+'Belgien', 'Bolivien', 'Kanada', 'Bulgarien', 'Brasilien', 'Dänemark', 'Tschechische', 'Estland', 
+'Deutschland', 'Frankreich', 'Finnland', 'Griechenland', 'Ungarn', 'Island', 'Irland', 'Israel', 
 'Italien', 'Luxemburg','Litauen', 'Lettland', 'Mexiko', 'Neuseeland', 'Niederlande', 'Norwegen', 
 'Polen', 'Rumänien', 'Portugal', 'Slowakei', 'Südafrika', 'Spanien', 'Schweden', 'Schweiz', 
 'Großbritannien', 'USA', 'Uruguay', 'Peru', 'Panama', 'Paraguay','Nicaragua', 'Guatemala', 
@@ -109,11 +104,6 @@ library(gameofthrones)
 library(scales) #rescale values 
 library(wrapr) # for piping with ggplot
 library(ggjoy) # to plot joyplot
-```
-
-```
-
-``` r
 # Allow piping into ggplot2
 apply_left.gg <- function(pipe_left_arg, pipe_right_arg, pipe_environment, left_arg_name,
                           pipe_string, right_arg_name) { pipe_right_arg <- eval(pipe_right_arg,
