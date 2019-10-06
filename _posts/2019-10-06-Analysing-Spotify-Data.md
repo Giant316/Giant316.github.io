@@ -165,4 +165,3 @@ left_join(map_data('world'), topTrack, by = c('region' = 'Country')) %.>%
 ```
 ![_config.yml]({{ site.baseurl }}/images/valence_Map.png)
 
-![_config.yml]({{ site.baseurl }}/images/pressure-1.png)
