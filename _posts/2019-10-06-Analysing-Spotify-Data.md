@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "This is a test post for my R blog"
+title: "Spotify Top50 Charts Analysis"
 ---
 
 Setup
@@ -32,10 +32,6 @@ In this analysis, I am comparing the Top50 tracks from all countries so I am ret
 playlist <- get_user_playlists('gorpublicusage') %>% filter(grepl("^Top 50.*", name)) %>% select(id, country = name) 
 ```
 
-    ## Registered S3 method overwritten by 'openssl':
-    ##   method      from
-    ##   print.bytes Rcpp
-
 ``` r
 playlist$country <- lapply(playlist$country, str_remove, "Top 50 ") 
 
@@ -64,11 +60,6 @@ for (i in 1:dim(playlist)[1]) {
       remaining_countries <- c(remaining_countries, playlist$country[i])
     }
 }
-```
-
-``` r
-rm(df) # remove unnecessary df created in the loop
-rm(remaining_countries)
 ```
 
 Data Cleansing
@@ -117,10 +108,9 @@ library(ggplot2)
 library(gameofthrones)
 library(scales) #rescale values 
 library(wrapr) # for piping with ggplot
+library(ggjoy) # to plot joyplot
 ```
 
-``` r
-library(ggjoy) # to plot joyplot
 ```
 
 ``` r
@@ -148,7 +138,7 @@ ggplot(topTrack, aes(x=valence, y=Continent, fill=Continent)) %.>%
 
     ## Picking joint bandwidth of 1.27
 
-![](Spotify_files/figure-markdown_github/valence_Joyplot.png)
+![_config.yml]({{ site.baseurl }}/images/valence_Joyplot.png)
 
 ``` r
 ggplot(topTrack, aes(x=danceability, y=Continent, fill=Continent)) +
@@ -163,7 +153,7 @@ ggplot(topTrack, aes(x=danceability, y=Continent, fill=Continent)) +
 
     ## Picking joint bandwidth of 0.978
 
-![](Spotify_files/figure-markdown_github/danceability_Joyplot.png)
+![_config.yml]({{ site.baseurl }}/images/danceability_Joyplot.png)
 
 Valence World Map
 
@@ -176,4 +166,4 @@ left_join(map_data('world'), topTrack, by = c('region' = 'Country')) %.>%
        caption = "Data Source:Spotify Top50 Chart by Country") 
 ```
 
-![](Spotify_files/figure-markdown_github/valence_Map.png)
+![_config.yml]({{ site.baseurl }}/images/valence_Map.png)
