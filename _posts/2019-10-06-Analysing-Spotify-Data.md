@@ -137,7 +137,6 @@ ggplot(topTrack, aes(x=valence, y=Continent, fill=Continent)) %.>%
 ```
 
     ## Picking joint bandwidth of 1.27
-
 ![_config.yml]({{ site.baseurl }}/images/valence_Joyplot.png)
 
 ``` r
@@ -152,7 +151,6 @@ ggplot(topTrack, aes(x=danceability, y=Continent, fill=Continent)) +
 ```
 
     ## Picking joint bandwidth of 0.978
-
 ![_config.yml]({{ site.baseurl }}/images/danceability_Joyplot.png)
 
 Valence World Map
@@ -165,5 +163,6 @@ left_join(map_data('world'), topTrack, by = c('region' = 'Country')) %.>%
        subtitle = "using audio feature of valence score", 
        caption = "Data Source:Spotify Top50 Chart by Country") 
 ```
-
 ![_config.yml]({{ site.baseurl }}/images/valence_Map.png)
+
+![_config.yml]({{ site.baseurl }}/images/pressure-1.png)
