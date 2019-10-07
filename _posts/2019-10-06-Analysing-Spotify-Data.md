@@ -8,7 +8,9 @@ Spotify provides an access of audio features' metadata of all songs available in
 Setup
 -----
 
-In order to access Spotify data, first register yourself a "Spotify for Developer" account and get your API key by selecting the Dashboard then click on "Create a Client ID" and fill in the required questions. Go to your new app page, click on "Show Client Secret" to retrieve your Client Secret, copy it and your Client ID to replace the following. The you will have your Spotify access token. *Note: make sure "<http://localhost:8888>" and "<http://localhost:8888/callback>" are added under Redirect URIs from the settings*
+In order to access Spotify data, first register yourself a "Spotify for Developer" account and get your API key by selecting the Dashboard then click on "Create a Client ID" and fill in the required questions. Go to your new app page, click on "Show Client Secret" to retrieve your Client Secret, copy it and your Client ID to replace the following. The you will have your Spotify access token. I was referring this [post](https://msmith7161.github.io/what-is-speechiness/) for this setup. 
+
+*Note: make sure "<http://localhost:8888>" and "<http://localhost:8888/callback>" are added under Redirect URIs from the settings*
 
 ``` r
 library(spotifyr)
@@ -120,7 +122,7 @@ model %>% broom::augment() %>% ggplot(aes(x=.fitted,y=.resid)) +
 
 ![_config.yml]({{ site.baseurl }}/images/linear-2.png)
 
-The preliminaries analysis above show that feature reduction is the next sensible move. Before that I am going to handpick an interesting audio feature which is the valence score. Simply put, this score indicates the happiness level of the song (given on the scale of 0-1; for 1 being happy; 0 being sad). It is interesting to see how latin America countries & Spanish speaking countries dominated the rank of mean valence score.
+The preliminaries analysis above show that feature reduction is the next sensible move. Before that I am going to handpick an interesting audio feature which is the valence score. Simply put, this score indicates the happiness level of the song (given on the scale of 0-1; for 1 being happy; 0 being sad). It is interesting to see how latin America countries & Spanish speaking countries dominated the rank of mean valence score. Some ideas/codes of the following analysis are referred from [here](http://paulelvers.com/post/emotionsineuropeanmusic/). 
 
 ``` r
 library(ggplot2)
