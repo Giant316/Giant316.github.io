@@ -61,7 +61,7 @@ for (i in 1:dim(playlist)[1]) {
 }
 ```
 
-ata Cleansing
+Data Cleansing
 --------------
 
 A little house-keeping for the dataframe. Since the data was accessed in Germany, I have to map the respective countries name to its respective English name (as later on I will need to join by country name with map\_data to get its coordinates). An additional column of "Continent" is added so that we can make analysis on higher level.
