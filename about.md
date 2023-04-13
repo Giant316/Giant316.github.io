@@ -4,8 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Currently a master student of Management & Data Science in Leuphana University. A former software engineer in embedded system for smart card technology. 
+Data professional who has extensive experience with technologies across multiple industries. 
 
 ### Contact me
 
-[Jia.Y.Ng@stud.leuphana.de](mailto:email@domain.com)
+[jiayan.ng@theinformationlab.co.uk](mailto:email@domain.com)
